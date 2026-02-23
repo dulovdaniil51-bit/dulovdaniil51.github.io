@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AquaClean Sim</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Симулятор очистки сточных вод</h1>
+
+        <!-- Ввод данных -->
+        <div class="input-section">
+            <h2>Параметры стоков</h2>
+            <label>Объём (м³/сут): <input type="number" id="volume" value="3"></label>
+            <label>БПК (мг/л): <input type="number" id="bpk" value="250"></label>
+            <label>Взвешенные вещества (мг/л): <input type="number" id="suspended" value="300"></label>
+        </div>
+
+        <!-- Выбор модулей -->
+        <div class="modules-section">
+            <h2>Добавьте модули</h2>
+            <button onclick="addModule('coarse')">Грубая фильтрация</button>
+            <button onclick="addModule('aerobic')">Аэробная зона</button>
+            <button onclick="addModule('settler')">Отстойник</button>
+        </div>
+
+        <!-- Запуск симуляции -->
+        <button onclick="runSimulation()" class="simulate-btn">Запустить симуляцию</button>
+
+        <!-- Результаты -->
+        <div id="results"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
